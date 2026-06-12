@@ -87,3 +87,10 @@
 
 本仓库是方法论和模板仓库，不绑定某个具体业务项目。
 
+## 12. 参考示例
+
+如果你想看一个写好的版本，可以参考：
+
+- [`docs/examples/sample_project_brief.md`](./examples/sample_project_brief.md)
+- [`docs/examples/sample_project_status.md`](./examples/sample_project_status.md)
+

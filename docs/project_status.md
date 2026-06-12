@@ -117,3 +117,53 @@
 
 - 2026-06-12 17:30
 
+### 2026-06-12 17:40 - 增强快速开始与示例
+
+#### 本次目标
+
+- 让仓库入口更清晰
+- 补充可直接照抄的真实示例
+
+#### 已完成内容
+
+- 重写 README 的快速开始与目录结构
+- 在 project_brief 中加入示例入口
+- 新增示例版 project_brief
+- 新增示例版 project_status
+
+#### 修改文件列表
+
+- README.md
+- docs/project_brief.md
+- docs/examples/sample_project_brief.md
+- docs/examples/sample_project_status.md
+- docs/project_status.md
+
+#### 核心实现思路
+
+- 入口文件负责引导
+- 示例文件负责“照着填”
+- 保持主模板简洁，示例单独承载完整内容
+
+#### 遗留问题
+
+- 示例目前聚焦文档问答场景
+- 还可以继续补其他类型项目样例
+
+#### 下一步 ToDo
+
+- 视需要增加第二个示例场景
+
+#### 关键 Claude Code 指令
+
+```text
+请把 README 做成更像开箱即用的入口，并补一套真实示例文件。
+```
+
+#### 测试结果
+
+- 无自动化测试
+
+#### 更新时间
+
+- 2026-06-12 17:40
