@@ -243,7 +243,7 @@ Claude Code 在这个项目里应该怎么工作？
 ## 7. 技术约束
 
 - Python 版本：
-- 包管理方式：
+- Python 包管理器和环境管理工具：统一使用 `uv`
 - 主要框架：
 - 模型调用方式：
 - 数据存储方式：
@@ -405,6 +405,7 @@ CLAUDE.md
 - 输出保持简洁
 - 不输出长篇推理
 - 不重复解释用户已经确认过的内容
+- Python 项目统一使用 `uv`，作为 Python 包管理器和环境管理工具
 
 ---
 
@@ -610,8 +611,8 @@ CLAUDE.md
 - 项目类型：本地 Python AI 项目
 - 当前阶段：
 - Python 版本：
-- 包管理方式：
-- 测试命令：
+- Python 包管理器和环境管理工具：uv
+- 测试命令：uv run pytest
 - 主要入口文件：
 
 ---
@@ -1406,7 +1407,8 @@ hooks 可以自动执行固定命令，但风险较高。
 允许修改：
 - src/
 - tests/
-- pyproject.toml 或 requirements.txt
+- pyproject.toml
+- uv.lock
 - README.md
 - docs/project_status.md
 
@@ -1418,11 +1420,12 @@ hooks 可以自动执行固定命令，但风险较高。
 
 执行要求：
 1. 先说明最小项目结构
-2. 创建最小可运行版本
-3. 添加一个最小测试
-4. 运行测试
-5. 查看 diff
-6. 增量更新 /docs/project_status.md
+2. 使用 uv 管理 Python 依赖和项目环境
+3. 创建最小可运行版本
+4. 添加一个最小测试
+5. 使用 uv run pytest 运行测试
+6. 查看 diff
+7. 增量更新 /docs/project_status.md
 ```
 
 ---

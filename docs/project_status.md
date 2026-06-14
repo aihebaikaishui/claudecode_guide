@@ -8,7 +8,7 @@
 - 项目类型：文档与模板仓库
 - 当前阶段：基础结构已建立
 - Python 版本：待确认
-- 包管理方式：无
+- Python 包管理器和环境管理工具：本仓库不含 Python 代码；Python 项目模板统一使用 `uv`
 - 测试命令：待确认
 - 主要入口文件：README.md, 面向OPC的claudecode使用指南.md
 
@@ -167,3 +167,32 @@
 #### 更新时间
 
 - 2026-06-12 17:40
+
+### 2026-06-14 - 统一 Python 项目工具
+
+#### 本次目标
+
+- 明确 Python 项目的包管理和环境管理工具
+
+#### 已完成内容
+
+- 规定 Python 项目统一使用 `uv`
+- 同步更新项目规范、指南、模板和示例
+
+#### 修改文件列表
+
+- CLAUDE.md
+- README.md
+- docs/project_brief.md
+- docs/project_status.md
+- docs/examples/sample_project_brief.md
+- docs/examples/sample_project_status.md
+- 面向OPC的claudecode使用指南.md
+
+#### 测试结果
+
+- 通过全文检索检查规则表述一致性
+
+#### 更新时间
+
+- 2026-06-14
