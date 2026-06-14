@@ -54,13 +54,16 @@
 
 ## 7. 技术约束
 
-- Python 版本：待确认
-- 包管理方式：待确认
+- Python 版本：在 `.python-version` 和 `pyproject.toml` 中明确
+- 包管理与环境管理：统一使用 `uv`
+- 依赖声明与锁定：`pyproject.toml` 和 `uv.lock`
+- 标准环境同步命令：`uv sync`
+- 标准命令执行方式：`uv run <command>`
 - 主要框架：待确认
 - 模型调用方式：待确认
 - 数据存储方式：待确认
 - 测试框架：待确认
-- 不希望引入的依赖：待确认
+- 不希望引入的工具：除兼容已有项目外，不混用 `pip`、Poetry、Pipenv 或 Conda
 
 ## 8. 安全与成本约束
 
@@ -93,4 +96,3 @@
 
 - [`docs/examples/sample_project_brief.md`](./examples/sample_project_brief.md)
 - [`docs/examples/sample_project_status.md`](./examples/sample_project_status.md)
-

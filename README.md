@@ -7,6 +7,19 @@
 3. 项目当前做到哪
 4. 每次任务应该怎么下达
 
+## Python 项目统一约定
+
+本指南中的 Python 项目统一使用 [`uv`](https://docs.astral.sh/uv/) 管理 Python 版本、虚拟环境和依赖：
+
+```bash
+uv python install 3.11
+uv sync
+uv add <package>
+uv run pytest
+```
+
+新项目使用 `pyproject.toml` 和 `uv.lock`，不再同时维护多套包管理或虚拟环境方案。
+
 ## 快速开始
 
 如果你想直接拿去用，按这个顺序走就够了：
@@ -67,4 +80,3 @@
 
 `docs/examples/` 里的文件不是额外需求，而是“填好后的参考答案”。
 你可以直接照着改，不需要从空白页开始。
-
