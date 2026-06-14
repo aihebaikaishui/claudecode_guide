@@ -7,9 +7,9 @@
 - 项目名称：Claude Code 项目四件套实操配置指南
 - 项目类型：文档与模板仓库
 - 当前阶段：基础结构已建立
-- Python 版本：不适用
-- 包管理与环境管理：本仓库不含 Python 代码；模板统一规定使用 `uv`
-- 测试命令：无
+- Python 版本：待确认
+- 包管理方式：无
+- 测试命令：待确认
 - 主要入口文件：README.md, 面向OPC的claudecode使用指南.md
 
 ## 2. 当前总体状态
@@ -167,42 +167,3 @@
 #### 更新时间
 
 - 2026-06-12 17:40
-
-### 2026-06-14 - 统一 Python 包与环境管理
-
-#### 本次目标
-
-- 为所有 Python 项目建立统一、可执行的包管理和环境管理规范
-
-#### 已完成内容
-
-- 明确 Python 项目统一使用 `uv`
-- 统一使用 `pyproject.toml` 和 `uv.lock`
-- 统一通过 `uv sync` 同步环境
-- 统一通过 `uv run <command>` 执行项目命令
-- 同步更新主指南、模板和示例
-
-#### 修改文件列表
-
-- CLAUDE.md
-- README.md
-- docs/project_brief.md
-- docs/project_status.md
-- docs/examples/sample_project_brief.md
-- docs/examples/sample_project_status.md
-- 面向OPC的claudecode使用指南.md
-
-#### 核心实现思路
-
-- 在项目规范中定义强制规则
-- 在模板中提供可填写字段和标准命令
-- 在示例中展示完整写法
-- 对已有项目保留兼容性例外
-
-#### 测试结果
-
-- 通过全文检索检查包管理与环境管理表述的一致性
-
-#### 更新时间
-
-- 2026-06-14

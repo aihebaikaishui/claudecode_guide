@@ -243,25 +243,12 @@ Claude Code 在这个项目里应该怎么工作？
 ## 7. 技术约束
 
 - Python 版本：
-- 包管理与环境管理：统一使用 `uv`
-- 依赖声明与锁定：`pyproject.toml` 和 `uv.lock`
-- 环境同步命令：`uv sync`
-- 项目命令执行方式：`uv run <command>`
+- 包管理方式：
 - 主要框架：
 - 模型调用方式：
 - 数据存储方式：
 - 测试框架：
-- 不希望引入的工具或依赖：
-
-Python 项目统一约定：
-
-* 使用 `uv` 管理 Python 版本、虚拟环境和依赖
-* 使用 `pyproject.toml` 声明项目配置和依赖
-* 提交 `uv.lock`，保证开发和 CI 环境可复现
-* 使用 `uv add` 和 `uv remove` 调整依赖
-* 使用 `uv sync` 创建或同步环境
-* 使用 `uv run <command>` 执行 Python、测试、格式化和其他命令
-* 除非维护已有项目的兼容性，不新增 `requirements.txt`、Poetry、Pipenv 或 Conda 配置
+- 不希望引入的依赖：
 
 ## 8. 安全与成本约束
 
@@ -335,7 +322,7 @@ MVP 功能
 
 要求：
 1. 只读分析，不要修改业务代码
-2. 优先阅读 README、pyproject.toml、uv.lock、src/、tests/ 中必要文件；已有项目使用 requirements.txt 时按需兼容读取
+2. 优先阅读 README、pyproject.toml、requirements.txt、src/、tests/ 中必要文件
 3. 不做无意义全仓扫描
 4. 根据已有代码反向总结项目目标、核心功能、技术约束和当前优先级
 5. 不要编造不存在的功能
@@ -421,18 +408,7 @@ CLAUDE.md
 
 ---
 
-## 3. Python 项目工具规范
-
-- Python 项目统一使用 `uv` 管理 Python 版本、虚拟环境和依赖
-- 使用 `pyproject.toml` 声明项目配置和依赖，并提交 `uv.lock`
-- 使用 `uv add`、`uv remove` 调整依赖，不直接使用 `pip install`
-- 使用 `uv sync` 创建或同步环境
-- 使用 `uv run <command>` 执行 Python、测试、格式化和其他项目命令
-- 除非维护已有项目的兼容性，不新增 `requirements.txt`、Poetry、Pipenv 或 Conda 配置
-
----
-
-## 4. 安全底线
+## 3. 安全底线
 
 未经用户确认，禁止：
 
@@ -448,7 +424,7 @@ CLAUDE.md
 
 ---
 
-## 5. 可自动执行的操作
+## 4. 可自动执行的操作
 
 以下操作可直接执行：
 
@@ -464,7 +440,7 @@ CLAUDE.md
 
 ---
 
-## 6. 需要先说明但可继续执行的操作
+## 5. 需要先说明但可继续执行的操作
 
 以下操作需要先说明影响范围和修改方案；如不触及安全底线，可继续执行：
 
@@ -480,7 +456,7 @@ CLAUDE.md
 
 ---
 
-## 7. 必须人工确认的操作
+## 6. 必须人工确认的操作
 
 遇到以下情况必须停止并等待确认：
 
@@ -497,7 +473,7 @@ CLAUDE.md
 
 ---
 
-## 8. Claude Code 使用规则
+## 7. Claude Code 使用规则
 
 优先使用以下 Claude Code 工作方式：
 
@@ -517,7 +493,7 @@ CLAUDE.md
 
 ---
 
-## 9. Token 与上下文节省规则
+## 8. Token 与上下文节省规则
 
 - 优先阅读必要文件，不做无意义全仓扫描
 - 优先基于当前任务做增量分析
@@ -530,7 +506,7 @@ CLAUDE.md
 
 ---
 
-## 10. 文档维护规则
+## 9. 文档维护规则
 
 每次完成独立功能、修复、优化或重构后，必须增量更新：
 
@@ -554,7 +530,7 @@ CLAUDE.md
 
 ---
 
-## 11. 测试规则
+## 10. 测试规则
 
 优先运行与本次修改直接相关的测试。
 
@@ -566,7 +542,7 @@ CLAUDE.md
 
 ---
 
-## 12. 输出格式
+## 11. 输出格式
 
 任务结束时只输出：
 
@@ -634,8 +610,7 @@ CLAUDE.md
 - 项目类型：本地 Python AI 项目
 - 当前阶段：
 - Python 版本：
-- 包管理与环境管理：uv
-- 环境同步命令：uv sync
+- 包管理方式：
 - 测试命令：
 - 主要入口文件：
 
@@ -1431,9 +1406,7 @@ hooks 可以自动执行固定命令，但风险较高。
 允许修改：
 - src/
 - tests/
-- pyproject.toml
-- uv.lock
-- .python-version
+- pyproject.toml 或 requirements.txt
 - README.md
 - docs/project_status.md
 
@@ -1445,12 +1418,11 @@ hooks 可以自动执行固定命令，但风险较高。
 
 执行要求：
 1. 先说明最小项目结构
-2. 使用 uv 初始化项目、管理 Python 环境和依赖
-3. 创建最小可运行版本
-4. 添加一个最小测试
-5. 使用 uv run 执行测试
-6. 查看 diff
-7. 增量更新 /docs/project_status.md
+2. 创建最小可运行版本
+3. 添加一个最小测试
+4. 运行测试
+5. 查看 diff
+6. 增量更新 /docs/project_status.md
 ```
 
 ---
